@@ -118,6 +118,23 @@ Database Host: localhost
 Table Prefix: dm_
 ```
 
-即可安装Wordpress！！
+（5）配置FTP服务
+
+在需要安装wordpress模板时，会要求输入FTP用户名和密码，我们可以进行如下设置，即可无需输入用户名密码，就可以进行模板安装。
+
+```
+cd /var/www/html/example.com/wordpress_5.4.2
+sudo vim wp-config.php
+```
+
+在wp-config.php文件中添加如下指令。
+
+```
+define("FS_METHOD", "direct");
+define("FS_CHMOD_DIR", 0777);
+define("FS_CHMOD_FILE", 0777);
+```
+
+即可成功使用Wordpress！！
 
 
